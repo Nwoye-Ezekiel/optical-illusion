@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" class="paused">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:title" content="CSS Optical Illusion" />
+    <meta
+      property="og:description"
+      content="A mesmerizing optical illusion created with pure CSS."
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>CSS Optical Illusion - By Ezekiel Nwoye</title>
+  </head>
+  <body>
+    <audio preload="auto" loop>
+      <source src="music.mp3" type="audio/mpeg" />
+    </audio>
+    <div class="music-modal-wrapper">
+      <div class="music-modal">
+        <h3>Enable Music</h3>
+        <div>
+          <button id="no-button">
+            <span>NO</span>
+          </button>
+          <button id="yes-button">
+            <span>YES</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="action-modal-wrapper controls">
+      <button id="size"></button>
+      <button id="music"></button>
+      <button id="theme"></button>
+    </div>
+    <div class="art-wrapper">
+      <div class="art-canvas">
+        <div class="rings-container"></div>
+      </div>
+
+      <div class="art-layer mask-left">
+        <div class="art-canvas canvas-left">
+          <div class="rings-container"></div>
+        </div>
+      </div>
+
+      <div class="art-layer mask-right">
+        <div class="art-canvas canvas-right">
+          <div class="rings-container"></div>
+        </div>
+      </div>
+
+      <div class="central-column">
+        <div class="column-accent-1"></div>
+        <div class="column-accent-2"></div>
+        <div class="art-layer column-segment-1"></div>
+        <div class="art-layer column-segment-2"></div>
+        <div class="art-layer column-segment-3"></div>
+        <div class="art-layer column-segment-4"></div>
+        <div class="art-layer column-segment-5"></div>
+        <div class="art-layer column-segment-6"></div>
+        <div class="art-layer column-segment-7"></div>
+        <div class="art-layer column-segment-8"></div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="index.js"></script>
+
+    <script>
+      const createRings = () => {
+        const rings = Array.from({ length: 22 }, (_, i) => {
+          const div = document.createElement("div");
+          div.className = `art-layer ring-${i + 1}`;
+          return div;
+        });
+        return rings;
+      };
+
+      document.querySelectorAll(".rings-container").forEach((container) => {
+        const rings = createRings();
+        rings.forEach((ring) => container.appendChild(ring));
+      });
+    </script>
+  </body>
+</html>

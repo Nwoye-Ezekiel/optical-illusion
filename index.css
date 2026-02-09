@@ -427,7 +427,7 @@ body::-webkit-scrollbar {
 
 .fade-out-animation,
 .music-modal-wrapper:has(.fade-out-animation) {
-  animation: hide-modal 2s ease forwards;
+  animation: hide-modal 6s ease forwards;
 }
 
 .action-modal-wrapper {

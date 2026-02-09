@@ -1,6 +1,15 @@
 :root {
   --color-white: #fff;
+  --color-white-1: #f6f6f8;
+  --color-white-2: #e6e6ed;
+  --color-white-alpha-40: #ffffff66;
+  --color-white-alpha-10: #ffffff1a;
+  --color-white-alpha-08: #ffffff14;
+  --color-white-alpha-02: #ffffff05;
+
   --color-black: #0c0c0c;
+  --color-black-1: #1f1f23;
+  --color-black-2: #313135;
 }
 
 * {
@@ -361,8 +370,8 @@ body::-webkit-scrollbar {
   justify-content: center;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  animation: show-modal 1s ease 1s forwards;
   background-color: var(--color-black);
+  animation: show-modal 1s ease 1s forwards;
 }
 
 .music-modal {
@@ -394,31 +403,31 @@ body::-webkit-scrollbar {
   border-radius: 5px;
   padding: 15px 30px;
   font-family: inherit;
-  transition: 0.1s ease;
+  transition: 0.3s ease;
   color: var(--color-white);
   background-color: transparent;
 }
 
 #no-button {
   color: var(--color-white);
-  /* border: 2px solid var(--color-pink);
-  background-color: var(--color-blue); */
+  background-color: var(--color-black-1);
 }
 
 #no-button:hover {
-  background-color: var(--color-blue);
+  background-color: var(--color-black-2);
 }
 
 #yes-button {
-  background-color: var(--color-blue);
+  background-color: var(--color-black-1);
 }
 
 #yes-button:hover {
-  background-color: var(--color-blue);
+  background-color: var(--color-black-2);
 }
 
-.fade-out-animation {
-  animation: hide-modal 1s ease forwards;
+.fade-out-animation,
+.music-modal-wrapper:has(.fade-out-animation) {
+  animation: hide-modal 2s ease forwards;
 }
 
 .action-modal-wrapper {
@@ -449,26 +458,26 @@ body::-webkit-scrollbar {
   transition: all 0.5s ease;
   color: var(--color-black);
   clip-path: inset(0 0 0 0 round 16px);
-  background-color: var(--color-white);
+  background-color: var(--color-white-1);
 }
 
 .action-modal-wrapper button::before {
-  content: "";
-  position: absolute;
   inset: 0;
+  opacity: 0;
+  content: "";
+  z-index: -1;
+  position: absolute;
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.4),
-    rgba(255, 255, 255, 0.1)
+    var(--color-white-alpha-40),
+    var(--color-white-alpha-10)
   );
-  opacity: 0;
   transition: opacity 0.4s ease;
-  z-index: -1;
 }
 
 .action-modal-wrapper button:hover {
+  background-color: var(--color-white-2);
   transform: translateZ(0) translateY(-1px);
-  background-color: var(--color-white);
 }
 
 .action-modal-wrapper button:hover::before {
@@ -492,18 +501,18 @@ body::-webkit-scrollbar {
 
 body[data-theme="dark"] .action-modal-wrapper button {
   color: var(--color-white);
-  background-color: var(--color-black);
+  background-color: var(--color-black-1);
 }
 
 body[data-theme="dark"] .action-modal-wrapper button:hover {
-  background-color: var(--color-black);
+  background-color: var(--color-black-2);
 }
 
 body[data-theme="dark"] .action-modal-wrapper button::before {
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.08),
-    rgba(255, 255, 255, 0.02)
+    var(--color-white-alpha-08),
+    var(--color-white-alpha-02)
   );
 }
 
@@ -538,6 +547,7 @@ body[data-theme="dark"] .action-modal-wrapper button::before {
     visibility: hidden;
   }
 }
+
 @keyframes fade-in {
   100% {
     opacity: 1;

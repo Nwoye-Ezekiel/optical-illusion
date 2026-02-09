@@ -1,11 +1,13 @@
 const handleButtonClick = (playAudio) => {
   const audioEl = document.querySelector("audio");
-  const modal = document.querySelector(".music-modal-wrapper");
   const controls = document.querySelector(".controls");
+  const artWrapper = document.querySelector(".art-wrapper");
+  const modal = document.querySelector(".music-modal-wrapper");
 
   modal.classList.add("fade-out-animation");
   document.documentElement.classList.remove("paused");
   controls.classList.add("active");
+  artWrapper.classList.add("visible");
 
   if (playAudio && audioEl) {
     audioEl.play();

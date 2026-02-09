@@ -553,3 +553,9 @@ body[data-theme="dark"] .action-modal-wrapper button::before {
     opacity: 1;
   }
 }
+
+@media (max-width: 768px) {
+  #size {
+    display: none;
+  }
+}

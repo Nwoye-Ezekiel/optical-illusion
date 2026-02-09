@@ -20,11 +20,19 @@ document.getElementById("yes-button").addEventListener("click", () => {
   handleButtonClick(true);
 });
 
-let isExpanded = true;
+const isMobile = window.innerWidth <= 768;
+let isExpanded = !isMobile;
 const html = document.documentElement;
 const expandButton = document.getElementById("size");
 
-expandButton.innerHTML = '<i data-lucide="minimize-2"></i>';
+if (isMobile) {
+  html.style.fontSize = "max(calc(16 * min(100vw / 300, 100vh / 250)), 0rem)";
+  expandButton.innerHTML = '<i data-lucide="maximize-2"></i>';
+} else {
+  html.style.fontSize = "max(calc(16 * min(100vw / 250, 100vh / 169)), 0rem)";
+  expandButton.innerHTML = '<i data-lucide="minimize-2"></i>';
+}
+
 lucide.createIcons();
 
 expandButton.addEventListener("click", () => {

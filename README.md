@@ -11,7 +11,10 @@ View Live: 🔗 [CSS Optical Illusion Demo](https://nwoye-ezekiel.github.io/opti
 - Integrated ambient music
 - High-contrast black & white composition
 - Interactive modal for user-controlled music playback
-- Three utility controls: - **Music Toggle** – Play/pause background audio - **Theme Switch** – Toggle between light and dark modes - **Expand/Shrink** – Responsive scaling for optimal viewing on any device
+- Three utility controls:
+  - **Music Toggle** – Play/pause background audio
+  - **Theme Switch** – Toggle between light and dark modes
+  - **Expand/Shrink** – Responsive scaling for optimal viewing on any device
 
 ### 📸 Preview
 

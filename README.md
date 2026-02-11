@@ -18,7 +18,7 @@ View Live: 🔗 [CSS Optical Illusion Demo](https://nwoye-ezekiel.github.io/opti
 
 ### 📸 Preview
 
-![CSS Optical Illusion](/preview.png)
+![CSS Optical Illusion](/preview.jpg)
 
 ---
 
